@@ -23,23 +23,41 @@ Things you may want to cover:
 
 * ...
 
+## messagesテーブル
+
+Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|image|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|group_name|string|null: false, unique: true|
 
 ### Association
-- has_many :user
+- has_many :group_users
+- has_many :users, through: groups_users
+- has_many :messages
 
 ## usersテーブル
 
 Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false, add_index: true|
+|email|string|null: false, unique: true|
 
 ### Association
-- has_many :group
+- has_many :groups_users
+- has_many :groups, through: groups_users
+- has_many :messages
 
 ## groups_usersテーブル
 
@@ -51,64 +69,3 @@ Column|Type|Options|
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-## multiple_chat_functionテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|multiple_body|text|null: false, foreign_key: true|
-
-### Association
-- has_many :user
-- has_many :body
-
-## search_function
-
-|Column|Type|Options|
-|------|----|-------|
-
-|search|string|add_index: unique: true, null: false|
-
-### Association
-- belongs_to :user
-
-## user_invitation_function
-
-|Column|Type|Options|
-|------|----|-------|
-|user_invitation|integer|add_index: unique: true, null: false, foreign_key: true|
-
-### Asociation
-- belongs_to :user
-- belongs_to :group
-
-## chat_history_display_function
-
-|Column|Type|Options|
-|------|----|-------|
-|history|text|null: false, foreign_key: true|
-
-### Asociation
-- belongs_to :user
-- belongs_to :group
-
-##  image_transmission_function
-
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false, foreign_key: true|
-
-### Asociation
-- belongs_to :user
-- belongs_to :group
-
-## chat_automatic_update_function
-
-|Column|Type|Options|
-|------|----|-------|
-|chat_update|text|null: false, foreign_key: true|
-
-### Asociation
-- has_many :body
-- belongs_to :group
-
