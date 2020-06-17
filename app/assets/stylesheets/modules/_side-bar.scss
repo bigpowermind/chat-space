@@ -1,0 +1,15 @@
+.SideBar {
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+
+  &__header {
+    height: 100px;
+    background-color: #253141;
+  }
+
+  &__group {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+  }
+}
