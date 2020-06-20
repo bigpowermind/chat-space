@@ -1,5 +1,47 @@
-.MainChat
-  .MainChat__group-info
-  .MainChat__message-list
-  .MainChat__message-form
+.mainchat
+  .group-info
+    .group-info__box
+      %p.group-info__box__groupname
+        test
+      %ul.group-info__box__member-list
+        Member : 
+        %li.group-info__box__member
+          test-name
+
+    = link_to "#", class:"edit" do
+      Edit
+
+  .message-list
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+
+  .message-form
   

@@ -17,8 +17,12 @@
       width: 100%;
       height: 20px;
       font-weight: bold;
+      &__edit-user__btn {
+        padding-right: 5px;
+      }
       &__menu {
         display: flex;
+
         li {
           a {
             color: white;
@@ -27,19 +31,12 @@
         }
       }
     }
-  
-
-
-  
-
-
-
-
 
   .groups {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px;
+    box-sizing: border-box;
     .group {
       color: white;
       text-decoration: none;

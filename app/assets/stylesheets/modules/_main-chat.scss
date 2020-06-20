@@ -1,23 +1,87 @@
 .wrapper {
   display: flex;
 
-  .MainChat {
+  .mainchat {
     height: 100vh;
     width: calc(100vw - 300px);
     background-color: #ffffff;
-    border-bottom: 1px solid #eeeeee;
-
-    &__group-info {
+  
+    .group-info {
       height: 100px;
-      background-color: #ffffff;
+      padding: 0 40px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      &__box {
+        box-sizing: border-box;
+        &__groupname {
+          margin-top: 35px;
+          color: #333;
+          font-size: 20px;
+        }
+      }
+          &__box__member-list {
+            display: flex;
+            color: #999;
+            display: flex;
+            font-size: 12px;
+            margin-top: 15px;
+          }
+            li {
+              color: #999;
+              display: flex;
+              font-size: 12px;
+            }
+            a {
+              display: block;
+              border: 1px solid #38aef0;
+              color: #38aef0;
+              height: 40px;
+              line-height: 40px;
+              margin-top: 28px;            padding: 0 20px;
+              text-decoration: none;
+            }
     }
 
-    &__message-list {
+    .message-list {
       height: calc(100vh - 190px);
       background-color: #fafafa;
+      box-sizing: border-box;
+      padding: 35px 40px 0;
+      overflow: scroll;
+      &__box {
+        margin-bottom: 46px;
+        &__info {
+          display: flex;
+          &__username {
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: #999;
+            font-size: 12px;
+            padding-left: 10px;
+          }
+        }
+        &__message {
+          margin-top: 12px;
+            &__content {
+              color: #434a54;
+              font-size: 14px;
+              }
+            }
+        
+        
+      }
     }
 
-    &__message-form {
+
+
+
+
+
+    .message-form {
       height: 90px;
       background-color: #d2d2d2;
     }
