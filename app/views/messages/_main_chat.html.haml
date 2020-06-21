@@ -1,0 +1,54 @@
+.mainchat
+  .group-info
+    .group-info__box
+      %p.group-info__box__groupname
+        test
+      %ul.group-info__box__member-list
+        Member : 
+        %li.group-info__box__member
+          test-name
+
+    = link_to "#", class:"edit" do
+      Edit
+
+  .message-list
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+    .message-list__box
+      .message-list__box__info
+        .message-list__box__info__username
+          test
+        .message-list__box__info__date
+          2020年6月20日 6時00分
+      .message-list__box__message
+        %p.message-list__content
+          test.message
+
+
+  .message-form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon("fas", "image")
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", value: "Send", class: "submit-btn"}
+      
