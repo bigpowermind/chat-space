@@ -41,12 +41,19 @@
       color: white;
       text-decoration: none;
       margin-bottom: 40px;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
       &__group-name {
         font-size: 15px;
       }
       &__latest-message {
         font-size: 11px;
       }
+
     }
   }
 }
