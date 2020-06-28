@@ -2,53 +2,57 @@
   .group-info
     .group-info__box
       %p.group-info__box__groupname
-        test
+        = @group.name
       %ul.group-info__box__member-list
         Member : 
-        %li.group-info__box__member
-          test-name
+        %ul
+          - @group.users.each do |user|
+            %li= user.name
 
-    = link_to "#", class:"edit" do
+    = link_to edit_group_path(current_user), class:"edit" do
       Edit
 
   .message-list
-    .message-list__box
-      .message-list__box__info
-        .message-list__box__info__username
-          test
-        .message-list__box__info__date
-          2020年6月20日 6時00分
-      .message-list__box__message
-        %p.message-list__content
-          test.message
-
-    .message-list__box
-      .message-list__box__info
-        .message-list__box__info__username
-          test
-        .message-list__box__info__date
-          2020年6月20日 6時00分
-      .message-list__box__message
-        %p.message-list__content
-          test.message
-
-    .message-list__box
-      .message-list__box__info
-        .message-list__box__info__username
-          test
-        .message-list__box__info__date
-          2020年6月20日 6時00分
-      .message-list__box__message
-        %p.message-list__content
-          test.message
-
+    = render @messages
 
   .message-form
-    %form.new-message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon("fas", "image")
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", value: "Send", class: "submit-btn"}
-      
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
+      .form__input-box
+        = f.text_field :content, class: "form__input-box__text", placeholder: 'type a message'
+        = f.label :image, class: "form__input-box__image" do
+          = icon('far', 'image')
+          = f.file_field :image, class: "form__input-box__image__file"
+      = f.submit 'Send', class: "submit-btn"
+
+    -# .message-list__box
+    -#   .message-list__box__info
+    -#     .message-list__box__info__username
+    -#       test
+    -#     .message-list__box__info__date
+    -#       2020年6月20日 6時00分
+    -#   .message-list__box__message
+    -#     %p.message-list__content
+    -#       test.message
+
+    -# .message-list__box
+    -#   .message-list__box__info
+    -#     .message-list__box__info__username
+    -#       test
+    -#     .message-list__box__info__date
+    -#       2020年6月20日 6時00分
+    -#   .message-list__box__message
+    -#     %p.message-list__content
+    -#       test.message
+
+    -# .message-list__box
+    -#   .message-list__box__info
+    -#     .message-list__box__info__username
+    -#       test
+    -#     .message-list__box__info__date
+    -#       2020年6月20日 6時00分
+    -#   .message-list__box__message
+    -#     %p.message-list__content
+    -#       test.message
+
+
+  
