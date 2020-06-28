@@ -75,19 +75,14 @@
       }
     }
 
-
-
-
-
-
     .message-form {
       height: 90px;
       background-color: #d2d2d2;
       padding: 20px 40px;
 
-      form {
+      .form {
         display: flex;
-        .input-box {
+        &__input-box {
           display: flex;
           position: relative;
           width: 100%;
