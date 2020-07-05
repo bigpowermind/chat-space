@@ -54,11 +54,14 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       let html = buildHTML(data);
       $(".message-list").append(html);
       $("form")[0].reset();
       $(".message-list").animate({scrollTop: $(".message-list")[0].scrollHeight});
+      $('.submit-btn').prop('disabled', false);
+    })
+    .fail(function(){
+      alert("メッセージ送信に失敗しました");
     })
   });
 });
